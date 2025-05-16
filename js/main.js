@@ -222,7 +222,7 @@
 
                     setTimeout(function() {
                         box.style.display = 'none';
-                    }, 500)
+                    }, 200)
                 }
             });
         })
@@ -284,7 +284,7 @@
         
         const moveTo = new MoveTo({
             tolerance: 0,
-            duration: 1200,
+            duration: 50,
             easing: 'easeInOutCubic',
             container: window
         }, easeFunctions);
