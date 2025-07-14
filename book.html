@@ -607,130 +607,158 @@
 
 
 
-        <style>
-            /* body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                margin: 0;
-                padding: 40px;
-                background-color: #f4f6f9;
-            } */
-
-            .books-container {
-                display: flex;
-                flex-direction: column;
-                gap: 40px;
-                padding: 0 20px;
-                margin: 30px 0;
-                align-items: center;
-            }
-
-            .book-card {
-                width: 100%;
-                max-width: 1065px;
-                background-color: #fff;
-                border-radius: 16px;
-                overflow: hidden;
-                /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); */
-                box-shadow: 0 5px 10px #e69078;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .book-card:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 10px 15px #e69078;
-                /* box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12); */
-            }
-
-            .book-image {
-                width: 100%;
-                height: 320px;
-                object-fit: cover;
-            }
-
-            .book-content {
-                padding: 24px 28px;
-            }
-
-            .book-title {
-                font-size: 1.6em;
-                margin-bottom: 12px;
-                font-weight: bold;
-                color: #222;
-            }
-
-            .book-description {
-                font-size: 1em;
-                color: #555;
-                line-height: 1.6;
-                margin: 20px 0;
-            }
-
-            @media (max-width: 768px) {
-                .book-image {
-                    height: 220px;
-                }
-
-                .book-content {
-                    padding: 20px;
-                }
-
-                .book-title {
-                    font-size: 1.3em;
-                }
-            }
-        </style>
+       
 
 
-        <div class="books-container">
-            <div class="book-card">
-                <img src="images/GenAi.jpg" alt="Book 1 Cover" class="book-image">
-                <div class="book-content">
-                    <div class="book-title">Book Title 1</div>
-                    <div class="book-description">
-                        Together with Muhammad Awais and Lars Gyrup Brink Nielsen, I co-authored this practical guide to
-                        building cutting-edge
-                        applications using Angular, Python, and Google AI. This book offers hands-on insights into
-                        creating AI-driven solutions
-                        that seamlessly integrate into modern web and mobile applications. Whether you're an experienced
-                        developer or just
-                        starting your journey in AI and app development, this book provides actionable techniques and
-                        real-world examples to
-                        supercharge your projects.
-                    </div>
-                </div>
-            </div>
+       <style>
+    .books-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
 
-            <div class="book-card">
-                <img src="images/javascript.jpg" alt="Book 2 Cover" class="book-image">
-                <div class="book-content">
-                    <div class="book-title">Book Title 2</div>
-                    <div class="book-description">
-                        JavaScript Syntax for Beginners, published by Apress, provides a clear, structured, and hands-on
-                        approach to learning
-                        JavaScript. This book is designed for absolute beginners, covering core JavaScript concepts,
-                        syntax, and best practices
-                        while emphasizing why understanding HTML is crucial to mastering JavaScript.
+    .book-card {
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 5px 15px #e69078;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-                        <h5>What to Expect:-</h5>
-                        <p class="text-start">
-                            ✅ Step-by-step explanations of JavaScript fundamentals.
-                        </p>
-                        <p>
-                            ✅ Practical examples and exercises to reinforce learning.
-                        </p>
-                        <p>
-                            ✅ A strong foundation in JavaScript, preparing readers for modern frameworks like Angular
-                            and
-                            React.
-                        </p>
+    .book-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px #e69078;
+    }
 
-                        This book is not just about learning JavaScript—it’s about understanding it deeply, so you can
-                        write clean, efficient,
-                        and maintainable code from day one.
-                    </div>
-                </div>
-            </div>
+    .book-image-container {
+        flex: 0 0 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fafafa;
+        padding: 20px;
+    }
+
+    .book-image {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    .book-content {
+        flex: 1;
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .book-title {
+        font-size: 1.6em;
+        margin-bottom: 12px;
+        font-weight: bold;
+        color: #222;
+    }
+
+    .book-description {
+        font-size: 1em;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .book-description h5 {
+        margin-top: 15px;
+        font-size: 1.1em;
+        color: #e69078;
+    }
+
+    .book-description p {
+        margin: 6px 0;
+    }
+
+    .amazon-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #FF9900;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        width: fit-content;
+    }
+
+    .amazon-btn:hover {
+        background-color: #e68a00;
+    }
+
+    @media (max-width: 768px) {
+        .book-card {
+            flex-direction: column;
+        }
+
+        .book-image-container {
+            flex: 0 0 auto;
+            padding: 16px;
+        }
+
+        .book-image {
+            max-height: 220px;
+        }
+
+        .book-content {
+            padding: 20px;
+        }
+
+        .amazon-btn {
+            align-self: flex-start;
+        }
+    }
+</style>
+
+<div class="books-container">
+    <div class="book-card">
+        <div class="book-image-container">
+            <img src="images/GenAi.jpg" alt="AI Book Cover" class="book-image">
         </div>
+        <div class="book-content">
+            <div class="book-title">AI-Powered Applications</div>
+            <div class="book-description">
+                Together with Muhammad Awais and Lars Gyrup Brink Nielsen, I co-authored this practical guide to building cutting-edge applications using Angular, Python, and Google AI.
+                <br><br>
+                Whether you're an experienced developer or just starting your journey, this book provides actionable techniques and real-world examples to supercharge your projects.
+            </div>
+            <a href="https://www.amazon.com/Powered-App-Development-Leveraging-Practical-ebook/dp/B0DMWVCDHZ/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=" class="amazon-btn" target="_blank">Buy from Amazon</a>
+        </div>
+    </div>
+
+    <div class="book-card">
+        <div class="book-image-container">
+            <img src="images/javascript.jpg" alt="JavaScript Book Cover" class="book-image">
+        </div>
+        <div class="book-content">
+            <div class="book-title">JavaScript Syntax for Beginners</div>
+            <div class="book-description">
+                JavaScript Syntax for Beginners, published by Apress, provides a clear, structured, and hands-on approach to learning JavaScript.
+                <h5>What to Expect:</h5>
+                <p>✅ Step-by-step explanations of JavaScript fundamentals.</p>
+                <p>✅ Practical examples and exercises to reinforce learning.</p>
+                <p>✅ A strong foundation for frameworks like Angular and React.</p>
+                This book helps you write clean, efficient, and maintainable code from day one.
+            </div>
+            <a href="https://www.amazon.com/Beginning-JavaScript-Syntax-Understanding-Syntactical/dp/B0DZGYN99K/ref=sr_1_1?crid=5CF8YSEDYE3Q&dib=eyJ2IjoiMSJ9.Tm5ON6d6PiiTZL2Tri2kAYn3577h4WmeM8h_pPoeH3I.M-2HRM-lq3SGKanSQPuW4IEUn3s_wr3Oao_rT1RVhLI&dib_tag=se&keywords=sonu+kapoor+javascript+syntax&qid=1744001297&sprefix=sonu+kapoor+javascript+synta,aps,283&sr=8-1&dplnkId=a5eb2f8e-30d5-4847-bedb-4238be3d1a8c&nodl=1" class="amazon-btn" target="_blank">Buy from Amazon</a>
+        </div>
+    </div>
+</div>
+
 
 
 
